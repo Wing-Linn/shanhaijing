@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Noto Sans SC', 'PingFang SC', sans-serif;
+    background-color: #faf7f0;
+    color: #332b21;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: rgba(230, 61, 26, 0.15);
+    color: #221c15;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f5efe2;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #c4b394;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #a8946f;
+  }
+}
+
+@layer components {
+  .text-vertical {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+  }
+
+  .paper-bg {
+    background-color: #faf7f0;
+    background-image:
+      radial-gradient(ellipse at 20% 30%, rgba(196, 179, 148, 0.12) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 70%, rgba(196, 179, 148, 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 50%, rgba(47, 146, 102, 0.04) 0%, transparent 70%);
+  }
+
+  .seal-stamp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #e63d1a, #cc2a0e);
+    color: #faf7f0;
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 700;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(230, 61, 26, 0.25);
+  }
+
+  .gold-text {
+    background: linear-gradient(90deg, #a25e15, #c47d16, #a25e15);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 3s linear infinite;
+  }
+
+  .card-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(196, 179, 148, 0.25);
+  }
+
+  .ornate-border {
+    position: relative;
+  }
+
+  .ornate-border::before,
+  .ornate-border::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #a8946f, transparent);
+  }
+
+  .ornate-border::before {
+    top: 0;
+  }
+
+  .ornate-border::after {
+    bottom: 0;
+  }
+}
+
+@layer utilities {
+  .text-shadow-sm {
+    text-shadow: 0 2px 8px rgba(196, 179, 148, 0.2);
+  }
+}
